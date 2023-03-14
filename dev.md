@@ -95,3 +95,27 @@ public class FilmeProfile : Profile
     }
 }
 ```
+
+## Para o método patch
+
+- Adicionar newtonsoft json
+
+- TOOLS / NUGET PACKAGE MANAGER
+
+- Program.cs
+
+```
+builder.Services.AddControllers().AddNewtonsoftJson();
+```
+
+PATCH REQUEST:
+
+```
+[
+    {
+        "op": "replace",
+        "path": "/titulo",
+        "value": "novoTitulo"
+    }
+]
+```
