@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FilmesAPI.Controllers;
 
 [ApiController]
-[Route("[controller")]
+[Route("[controller]")]
 
 public class FilmeController : ControllerBase
 {
@@ -71,6 +71,17 @@ public class FilmeController : ControllerBase
         }
         _mapper.Map(filmeParaAtualizar, filme);
         _context.SaveChanges();
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult DeletaFilme(int id)
+    {
+        var filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
+        if (filme == null) return NotFound();
+        _context.Remove(filme);
+        _context.SaveChanges();
+
         return NoContent();
     }
 }
