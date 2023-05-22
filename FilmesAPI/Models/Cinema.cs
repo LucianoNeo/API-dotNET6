@@ -11,5 +11,7 @@ namespace FilmesAPI.Models
         public string Nome { get; set; }
         public int EnderecoId { get; set; }
         public virtual Endereco Endereco { get; set; } // explicita relação 1 x 1 com endereço
+
+        public virtual ICollection<Sessao> Sessoes { get; set; }
     }
 }

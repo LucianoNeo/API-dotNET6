@@ -1,17 +1,13 @@
 ﻿using AutoMapper;
-using FilmesAPI.Data.Dtos;
 using FilmesAPI.Data;
+using FilmesAPI.Data.Dtos;
 using FilmesAPI.Models;
 using Microsoft.AspNetCore.Mvc;
-using FilmesAPI.Data.Dtos;
-using FilmesAPI.Data;
-using FilmesAPI.Models;
 
 namespace FilmesApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-
     public class CinemaController : ControllerBase
     {
         private FilmeContext _context;
@@ -22,7 +18,6 @@ namespace FilmesApi.Controllers
             _context = context;
             _mapper = mapper;
         }
-
 
         [HttpPost]
         public IActionResult AdicionaCinema([FromBody] CreateCinemaDto cinemaDto)
@@ -64,7 +59,6 @@ namespace FilmesApi.Controllers
             return NoContent();
         }
 
-
         [HttpDelete("{id}")]
         public IActionResult DeletaCinema(int id)
         {
@@ -77,6 +71,5 @@ namespace FilmesApi.Controllers
             _context.SaveChanges();
             return NoContent();
         }
-
     }
 }

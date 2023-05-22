@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
-using FilmesAPI.Data.Dtos;
 using FilmesAPI.Data;
+using FilmesAPI.Data.Dtos;
 using FilmesAPI.Models;
 using Microsoft.AspNetCore.Mvc;
-using FilmesAPI.Data.Dtos;
-using FilmesAPI.Data;
-using FilmesAPI.Models;
 
 namespace FilmesApi.Controllers
 {
@@ -63,7 +60,6 @@ namespace FilmesApi.Controllers
             return NoContent();
         }
 
-
         [HttpDelete("{id}")]
         public IActionResult DeletaEndereco(int id)
         {
@@ -76,6 +72,5 @@ namespace FilmesApi.Controllers
             _context.SaveChanges();
             return NoContent();
         }
-
     }
 }
