@@ -2,10 +2,10 @@
 
 namespace FilmesAPI.Data.Dtos
 {
-    public class ReadCinemaDto
+    public class ReadEnderecoDto
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
-        public ReadEnderecoDto Endereco { get; set; }
+        public string Logradouro { get; set; }
+        public int Numero { get; set; }
     }
 }
